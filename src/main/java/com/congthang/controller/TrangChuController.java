@@ -13,19 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 @ResponseBody
 public class TrangChuController {
+//	@GetMapping("")
+//	public String TrangChu() {
+//		return "trangchu";
+//	}
 	@GetMapping("")
-	public String TrangChu() {
-		return "trangchu";
-	}
-	@PostMapping("login")
-	public String Login(@PathVariable String user, @PathVariable String pass, ModelMap map) {
+	public String Login(ModelMap map) {
 		
-		if(user.equals("thang")&&pass.equals("1234")) {
-			map.addAttribute("thongbao","ok");
-			return "trangchu";
-		}else{
-			map.addAttribute("thongbao","false");
-			return "trangchu";
-		}
+		map.addAttribute("thongbao","ok");
+		return "trangchu";
 	}
 }
